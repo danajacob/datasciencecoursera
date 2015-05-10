@@ -1,17 +1,17 @@
-#Codebook for dataTidy.txt produced by run_analysis.R
+###Codebook for dataTidy.txt produced by run_analysis.R
 
-#Raw Data Set 
+###Raw Data Set 
 
-Raw data are obtained from UCI Machine Learning repository:http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. The data set contains results from experiments with 30 individuals (subject) with each doing 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a Samsung Galaxy S II smartphone on the waist. Embedded accelerometer and gyroscope captured 3-axial (XYZ) linear acceleration and 3-axial (XYZ) angular velocity. The dataset is randomly partitioned into two sets, where 70% of the subjects was selected for generating the training data and 30% the test data.
+Raw data are obtained from UCI Machine Learning repository: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. The data set contains results from experiments with 30 individuals (subject) with each doing 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a Samsung Galaxy S II smartphone on the waist. Embedded accelerometer and gyroscope captured 3-axial (XYZ) linear acceleration and 3-axial (XYZ) angular velocity. The dataset is randomly partitioned into two sets, where 70% of the subjects was selected for generating the training data and 30% the test data.
 
-##The raw data set contains:
-	•	Subject identifier: 1-30
-	•	Six activities performed by each of the 30 subjects: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-	•	Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-	•	Triaxial Angular velocity from the gyroscope.
-	•	A 561-feature vector with time and frequency domain variables.	
+#####The raw data set contains:
+	* Subject identifier: 1-30
+	* Six activities performed by each subject: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+	* Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+	* Triaxial Angular velocity from the gyroscope.
+	* A 561-feature vector with time and frequency domain variables.	
 
-#Raw Data transformation
+###Raw Data transformation
 
 The raw data is transformed into a tidy data set in the following steps, using the script, run_analysis.R:
 1. Merged the training and the test sets to create one data set.
@@ -20,7 +20,7 @@ The raw data is transformed into a tidy data set in the following steps, using t
 4. Appropriately labeled the data set with descriptive variable names.
 5. Created an independent tidy data set with the average of each variable for each activity and each subject.
 
-#Tidy data set
+###Tidy data set
 
 180 records (rows). Ease record represents 1 of 6 activities performed by each of 30 subjects.
 
@@ -33,13 +33,13 @@ The raw data is transformed into a tidy data set in the following steps, using t
 	•	Signal types: Jerk signals
 	•	Signal axes: XYZ
 
-##Variables naming convention:
+######Variables naming convention:
 	•	Measurements: t (time), f (frequency)
 	•	Device: Acc (accelerometer), Gyro (gyroscope)
 	•	Stats: mean (mean), std (standard deviation)
 	•	Signal axes: XYZ
 	
-##Complete list of variables:
+######Complete list of variables:
         subject
         label
         tBodyAcc-mean()-X
