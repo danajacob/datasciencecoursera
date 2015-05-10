@@ -15,6 +15,7 @@ The data set contains the following files:
 - 'test/X_test.txt': Test set.
 - 'test/y_test.txt': Test labels.
 - 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample.
+- Inertial Signals files for train set and test set
 
 The R script in this repo, run_analysis.R, accomplishes the following:
 
