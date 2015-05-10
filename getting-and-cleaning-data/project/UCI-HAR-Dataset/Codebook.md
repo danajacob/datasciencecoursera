@@ -1,10 +1,10 @@
-###Codebook for dataTidy.txt produced by run_analysis.R
+###Codebook for coursera "Getting and Cleaning Data" course project
 
 ###Raw Data Set 
 
 Raw data are obtained from UCI Machine Learning repository: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. The data set contains results from experiments with 30 individuals (subject) with each doing 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a Samsung Galaxy S II smartphone on the waist. Embedded accelerometer and gyroscope captured 3-axial (XYZ) linear acceleration and 3-axial (XYZ) angular velocity. The dataset is randomly partitioned into two sets, where 70% of the subjects was selected for generating the training data and 30% the test data.
 
-#####The raw data set contains:
+The raw data set contains:
 - Subject identifier: 1-30
 - Six activities performed by each subject: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
@@ -22,22 +22,22 @@ The raw data is transformed into a tidy data set in the following steps, using t
 
 ###Tidy data set
 
-180 records (rows). Ease record represents 1 of 6 activities performed by each of 30 subjects.
+The tidy data set contains 180 records (rows). Ease record represents 1 of 6 activities performed by each of 30 subjects.
 
-68 variables (columns) for each record:
-	•	Subject identifier: value 1-30
-	•	Six activities performed by each of the 30 subjects: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-	•	Stats: Means and Standard Deviation of time and frequency
-	•	Measurements: Body linear acceleration and gravity
-	•	Measuring device: accelerometer and gyroscope
-	•	Signal types: Jerk signals
-	•	Signal axes: XYZ
+There are 68 variables (columns) for each record:
+- Subject identifier: value 1-30
+- Six activities performed by each of the 30 subjects: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+- Stats: Means and Standard Deviation of time and frequency
+- Measurements: Body linear acceleration and gravity
+- Measuring device: accelerometer and gyroscope
+- Signal types: Jerk signals
+- Signal axes: XYZ
 
 ######Variables naming convention:
-	•	Measurements: t (time), f (frequency)
-	•	Device: Acc (accelerometer), Gyro (gyroscope)
-	•	Stats: mean (mean), std (standard deviation)
-	•	Signal axes: XYZ
+- Measurements: t (time), f (frequency)
+- Device: Acc (accelerometer), Gyro (gyroscope)
+- Stats: mean (mean), std (standard deviation)
+- Signal axes: XYZ
 	
 ######Complete list of variables:
         subject
