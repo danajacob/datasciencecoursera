@@ -1,6 +1,7 @@
 This is the repo for coursera's "Getting and Cleanning Data" course project. The goal of the project is to clean a data set and create a dity data set with descriptive variable names and a clean codebook. In addition to descriptions of data variables, the codebook also documents any transformation work that led to the tidy data set. 
 
 The source data is the "Human Activity Recognition Using Smartphones Dataset" from the UCI Machine Learning Repository. 
+
 Dataset information is at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. 
 The dataset can be downloaded at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
 
