@@ -5,11 +5,11 @@
 Raw data are obtained from UCI Machine Learning repository: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. The data set contains results from experiments with 30 individuals (subject) with each doing 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a Samsung Galaxy S II smartphone on the waist. Embedded accelerometer and gyroscope captured 3-axial (XYZ) linear acceleration and 3-axial (XYZ) angular velocity. The dataset is randomly partitioned into two sets, where 70% of the subjects was selected for generating the training data and 30% the test data.
 
 #####The raw data set contains:
-	- Subject identifier: 1-30
-	- Six activities performed by each subject: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-	- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-	- Triaxial Angular velocity from the gyroscope.
-	- A 561-feature vector with time and frequency domain variables.	
+- Subject identifier: 1-30
+- Six activities performed by each subject: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+- Triaxial Angular velocity from the gyroscope.
+- A 561-feature vector with time and frequency domain variables.	
 
 ###Raw Data transformation
 
