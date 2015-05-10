@@ -14,11 +14,11 @@ Raw data are obtained from UCI Machine Learning repository: http://archive.ics.u
 ###Raw Data transformation
 
 The raw data is transformed into a tidy data set in the following steps, using the script, run_analysis.R:
-1. Merged the training and the test sets to create one data set.
-2. Extracted only the measurements on the mean and standard deviation for each measurement.
-3, Used descriptive activity names to name the activities in the data set
-4. Appropriately labeled the data set with descriptive variable names.
-5. Created an independent tidy data set with the average of each variable for each activity and each subject.
+ 1. Merged the training and the test sets to create one data set.
+ 2. Extracted only the measurements on the mean and standard deviation for each measurement.
+ 3, Used descriptive activity names to name the activities in the data set
+ 4. Appropriately labeled the data set with descriptive variable names.
+ 5. Created an independent tidy data set with the average of each variable for each activity and each subject.
 
 ###Tidy data set
 
