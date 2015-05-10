@@ -1,6 +1,8 @@
 This is the repo for coursera's "Getting and Cleanning Data" course project. The goal of the project is to clean a data set and create a dity data set with descriptive variable names and a clean codebook. In addition to descriptions of data variables, the codebook also documents any transformation work that led to the tidy data set. 
 
-The source data is the "Human Activity Recognition Using Smartphones Dataset" from the UCI Machine Learning Repository. A description of the dataset can be found at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. The dataset can be downloaded at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
+The source data is the "Human Activity Recognition Using Smartphones Dataset" from the UCI Machine Learning Repository. 
+Dataset information is at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. 
+The dataset can be downloaded at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
 
 This data records human activities wearing Samsung Galaxy 5 II smartphone. Experiments were carried out with a group of 30 volunteers between the age of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing the smartphone on the waist. Using its embedded accelerometer and gyroscope, the researchers captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. 
 
