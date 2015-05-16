@@ -15,7 +15,7 @@ dataTotal <- rbind(cbind(testSubjects, testLabels, testActivities), cbind(trainS
 featureNames <- read.table("features.txt", strip.white=TRUE, stringsAsFactors=FALSE)
 
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement.
-columnsMeanStd <- features[grep("mean\\(\\)|std\\(\\)", featureNames$V2), ]
+columnsMeanStd <- featureNames[grep("mean\\(\\)|std\\(\\)", featureNames$V2), ]
 dataSubset <- dataTotal[, c(1, 2, columnsMeanStd$V1+2)]
 
 # 3. Uses descriptive activity names to name the activities in the data set
