@@ -1,0 +1,100 @@
+---
+title: "Practical Machine Learning Project"
+author: "Dana Jacob"
+date: "January 7, 2016"
+output: html_document
+---
+
+library(knitr)  
+library(markdown)  
+library(ggplot2)
+library(lattice)
+library(plyr)
+  
+###Summary  
+This report is for the class project for Practical Machine Learning. The goal is to develop a model to predict the manner in which our subjects did a set of exercises. We'll use a training dataset and a testing dataset from this source: http://groupware.les.inf.puc-rio.br/har. The "classe" variable in the datasets is the outcome variable. We'll explore using other variables in the training dataset to predict classe. Once we have the prediction model built, we'll use it to predict 20 different test cases in the testing dataset.  
+  
+###Load data  
+```{r, cache=TRUE}
+library(caret)
+library(randomForest)
+library(rpart)
+library(AppliedPredictiveModeling)
+library(e1071)
+##download.file(url="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv", destfile = "pmlTraining.csv")
+##download.file(url = "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv", destfile = "pmlTesting.csv")
+##read datasets
+trainingSet <- read.csv('pmlTraining.csv')
+testingSet <- read.csv('pmlTesting.csv')
+dim(trainingSet)
+dim(testingSet)
+```
+  
+There are 160 variables in these datasets. We'll tidy up this dataset before we run modeling. We'll omit variables that are mostly empty, or with NA as values, and some of the user name, time stamp variables which will not be appropriate to use as predictors.   
+  
+```{r, cache=TRUE}
+trainingSet <-trainingSet[,-c(1:7)]
+zeroV <- nearZeroVar(trainingSet)
+trainingSet <- trainingSet[-zeroV]
+NAs <- apply(trainingSet,2,function(x) {sum(is.na(x))})
+trainingSet <- trainingSet[,which(NAs == 0)]
+dim(trainingSet)
+names(trainingSet)
+```
+
+We now have 53 'good' variables in our tidy dataset. With this many variables, Random Forest method would be appropriate.  
+  
+First we'll split the training dataset into training and testing sets to build and cross validate the model for the writeup portion of the project. 
+The original testing dataset will be used for the quiz portion of the project after we finalize the model.
+
+```{r, cache=TRUE}
+set.seed(1)
+inTrain <- createDataPartition(trainingSet$classe, p=0.7, list = FALSE)
+training <- trainingSet[ inTrain,]
+testing <- trainingSet[-inTrain,]
+dim(training)
+dim(testing)
+```
+  
+Now we run Random Forest on the training portion from the original training dataset.  
+  
+```{r, cache=TRUE}
+model <- randomForest(classe ~ ., data=training)
+model
+```
+  
+We see the model is quite effective at 0.49% error rate.  
+  
+We now apply the model to the test portion of our original training dataset to see how the model performs.  
+
+```{r, cache=TRUE}
+testPredict <- predict(model, testing)
+testResults <- confusionMatrix(testPredict, testing$classe)
+testResults
+```
+  
+We see the model performed really well, with an accuracy rate of 99.6%.  
+  
+Now we are ready for the quiz portion of the project. We'll apply the model to the original test dataset we downloaded previously. In order to do this, we need to tidy up the test dataset the exact same way as we did with the training dataset:  
+  
+```{r, cache=TRUE}
+
+testingSet <-testingSet[,-c(1:7)]
+
+zeroV <- nearZeroVar(testingSet)
+testingSet <- testingSet[-zeroV]
+
+NAs <- apply(testingSet,2,function(x) {sum(is.na(x))})
+testingSet <- testingSet[,which(NAs == 0)]
+
+dim(testingSet)
+names(testingSet)
+```
+  
+We see that we have the same variables in our tidy test dataset as in our tidy train dataset. We then apply the model to this dataset.
+
+```{r, cache=TRUE}
+quizPredict <- predict(model, testingSet)
+quizPredict
+```
+
